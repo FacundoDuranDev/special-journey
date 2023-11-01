@@ -14,9 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from .views import MiVista
+from django.urls import path, include
+from .views import MiVista, HomeView
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("mi-vista/", MiVista.as_view(), name="mi-vista")
+    path("mi-vista/", MiVista.as_view(), name="mi-vista"),
+    path("", HomeView.as_view() , name="home" ),
+    path("ejemplo/", include("ejemplo.urls")),
+    path("registro/", include("registros.urls")),
 ]

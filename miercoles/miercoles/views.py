@@ -1,6 +1,6 @@
 from django.views import View
 from django.http import HttpResponse
-
+from django.shortcuts import render
 import random
 import string
 # "sys" es uno de los modulos mas importantes
@@ -17,3 +17,7 @@ class MiVista(View):
     def get(self,request):
         contraseña = generar_contraseña(16)
         return HttpResponse(contraseña)
+
+class HomeView(View):
+    def get(self, request):
+        return render(request, "home.html", {})

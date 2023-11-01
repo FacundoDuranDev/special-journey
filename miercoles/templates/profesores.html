@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profesores</title>
+</head>
+<body>
+    <h1>Profesores</h1>
+    <ul>
+        <li>Nombre {{nombre}}</li>
+        {% for alumno in alumnos %}
+        {% if alumno != "" %}
+            <li> Alumno a cargo: {{alumno}}</li>
+        {% endif %}
+        {% endfor %}
+</ul>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Entregar</title>
+</head>
+<body>
+    <h1>Los integrantes del archivo son:</h1>
+
+    {% for nombre in lista %}
+    {% if nombre != "" %}
+        <li>{{nombre}}</li>
+    {% endif %}
+    {% endfor %}
+</body>
+</html>
